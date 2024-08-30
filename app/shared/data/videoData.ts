@@ -1,6 +1,6 @@
 import videojs from 'video.js';
 
-const youtube = process.env.NEXT_PUBLIC_VIDEO_URL;
+const youtube = process.env.NEXT_PUBLIC_VIDEO_URL || 'https://www.youtube.com/watch?v=cuXHmlh0TTo';
 const fastly = 'https://stream-fastly.castr.com/5b9352dbda7b8c769937e459/live_2361c920455111ea85db6911fe397b9e/index.fmp4.m3u8';
 const mp4 = 'https://storage.googleapis.com/cv-bucket-public/demo/Minsk_05_07_2024_left_half1/Minsk_05_07_2024_left_half1_4k_pan-7258x1800.mp4';
 

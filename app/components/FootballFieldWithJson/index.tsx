@@ -12,7 +12,7 @@ interface IFootballFieldWithJson {
     currentTime: number;
 }
 
-const JSON_URL = process.env.NEXT_PUBLIC_METRICS_JSON_URL as string;
+const JSON_URL = process.env.NEXT_PUBLIC_METRICS_JSON_URL as string || 'https://gateway.pinata.cloud/ipfs/QmaJkWYNLqZMvToxEp6BFx7pRKzfTrQDhSL8QgYuRWENEP';
 
 export const DriftFieldWithJson: FC<IFootballFieldWithJson> = ({ currentTime }) => {
   const [parsedCoordinates, setParsedCoordinates] = useState<FromMlWebsocketData[]>([]);
