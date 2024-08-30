@@ -1,0 +1,9 @@
+deployment:
+  envs:
+    NEXT_PUBLIC_CLIENT_URL: 'https://toy-car-racing.computer-vision.stage.enigmagroup.tech'
+    NEXT_PUBLIC_METRICS_JSON_URL: 'https://gateway.pinata.cloud/ipfs/QmaJkWYNLqZMvToxEp6BFx7pRKzfTrQDhSL8QgYuRWENEP'
+    NEXT_PUBLIC_VIDEO_URL: 'https://www.youtube.com/watch?v=cuXHmlh0TTo'
+    NEXT_PUBLIC_ENV_DOMAIN_PREFIX: 'stage'
+    NEXT_PUBLIC_ALLOW_INDEXING: "disallow"
+ingress:
+  isPublic: true

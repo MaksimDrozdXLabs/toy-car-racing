@@ -1,0 +1,16 @@
+:root {
+    --font-zapus: Zapus Sans, sans-serif;
+    --font-medium: Medium, sans-serif;
+}
+
+@font-face {
+    font-family: Zapus Sans;
+    src: url('./zapussans.ttf');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: Medium;
+    src: url('./medium.otf');
+    font-weight: 400;
+}

@@ -1,0 +1,9 @@
+{
+  "extends": [
+    "stylelint-config-standard"
+  ],
+  "customSyntax": "postcss-styled-syntax",
+  "ignoreFiles": [
+    "app/shared/media.ts"
+  ]
+}

@@ -1,0 +1,48 @@
+@import '../public/fonts/fonts.css';
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: var(--font-zapus), sans-serif;
+}
+
+body .MuiTypography-root {
+    font-family: var(--font-zapus), sans-serif;
+}
+
+
+a {
+    text-decoration: none !important;
+}
+
+.video-js .vjs-volume-panel.vjs-volume-panel-vertical {
+    display: none !important;
+}
+
+.vjs-live .vjs-time-control, .vjs-live .vjs-time-divider, .video-js .vjs-current-time, .video-js .vjs-duration {
+    display: inline-block !important;
+}
+
+.video-js .vjs-current-time, .video-js .vjs-time-divider, .video-js .vjs-duration, .vjs-live .vjs-time-control, .vjs-live .vjs-time-divider, .video-js .vjs-current-time, .video-js .vjs-duration {
+    display: inline-block !important;
+}
+
+.video-js .vjs-time-control .vjs-remaining-time-display {
+    display: none !important;
+}
+
+
+div.vjs-control-bar > div.vjs-remaining-time.vjs-time-control.vjs-control {
+    display: none !important;
+}
+
+.specialBlue {
+    background-color: blue !important;
+}

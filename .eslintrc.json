@@ -1,0 +1,104 @@
+{
+  "extends": [
+    "next/core-web-vitals",
+    "airbnb",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/eslint-recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint",
+    "simple-import-sort"
+  ],
+  "rules": {
+    "new-cap": "off",
+    "object-curly-spacing": [
+      2,
+      "always"
+    ],
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-explicit-any": "warn",
+    "@typescript-eslint/no-unused-vars": [
+      "error"
+    ],
+    "simple-import-sort/imports": [
+      "error",
+      {
+        "groups": [
+          [
+            "^\\u0000"
+          ],
+          [
+            "^node:"
+          ],
+          [
+            "^react",
+            "^@?\\w"
+          ],
+          [
+            "^(@|components|utils|config|vendored-lib)(/.*|$)"
+          ],
+          [
+            "^\\.\\.(?!/?$)",
+            "^\\.\\./?$",
+            "^\\./(?=.*/)(?!/?$)",
+            "^\\.(?!/?$)",
+            "^\\./?$"
+          ],
+          [
+            "^\\./"
+          ],
+          [
+            "^.+\\.s?css$"
+          ]
+        ]
+      }
+    ],
+    "simple-import-sort/exports": "error",
+    "prefer-promise-reject-errors": 0,
+    "camelcase": 0,
+    "no-continue": 0,
+    "consistent-return": 0,
+    "no-plusplus": 0,
+    "import/no-cycle": 0,
+    "no-throw-literal": 0,
+    "react/no-array-index-key": 0,
+    "import/no-extraneous-dependencies": 0,
+    "react/jsx-closing-tag-location": 0,
+    "no-param-reassign": 0,
+    "no-shadow": 0,
+    "react/jsx-props-no-spreading": 0,
+    "react/require-default-props": 0,
+    "react/function-component-definition": 0,
+    "max-len": [
+      "error",
+      {
+        "code": 150,
+        "ignoreStrings": true,
+        "ignoreComments": true
+      }
+    ],
+    "react/react-in-jsx-scope": 0,
+    "react/jsx-no-useless-fragment": 0,
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".ts",
+          ".tsx"
+        ]
+      }
+    ],
+    "import/prefer-default-export": 0,
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ]
+  }
+}
