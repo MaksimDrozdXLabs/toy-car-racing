@@ -17,7 +17,8 @@ export const DriftFieldWrapper = styled(Box)`
   border-radius: 12px;
   background-color: ${COLORS.mistyWhite};
     flex: 1 1 auto;
-    width: 100%;
+    // width: 100%;
+    width: 50%;
 `;
 
 export const MainContainer = styled(Box)`

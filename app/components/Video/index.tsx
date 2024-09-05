@@ -117,11 +117,14 @@ const Video: FC<VideoProps> = ({
       {isVideoLoading && (
         <Skeleton variant="rounded" width="100%" height="510px" />
       )}
-      <VideoWrapper $isVideoLoading={isVideoLoading}>
-        <Box>
-          <div ref={videoRef} />
-        </Box>
-      </VideoWrapper>
+      <Box style={{width: '50%'}}>
+        <VideoWrapper $isVideoLoading={isVideoLoading}>
+          <Box className={"stream-root"}>
+            {/*<div ref={videoRef} /> */}
+            <img className={"stream-img"} src="http://127.0.0.1:8081/drift/video_feed"/>
+          </Box>
+        </VideoWrapper>
+      </Box>
     </>
   );
 };

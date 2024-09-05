@@ -10,4 +10,14 @@ export const VideoWrapper = styled(Box)<{ $isVideoLoading: boolean }>`
     & .video-js, video {
         border-radius: 12px;
     }
+
+    .stream-root {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+    .stream-img {
+      // height: 80vh;
+      width: 100%;
+    }
 `;
