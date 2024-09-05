@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 
 import { DriftFieldWithJson } from '@/app/components/FootballFieldWithJson';
+import { DriftFieldWithWebSocket } from '@/app/components/DriftFieldWithWebSocket';
 import Video from '@/app/components/Video';
 import { defaultVideoOptions } from '@/app/shared/data/videoData';
 
@@ -26,8 +27,8 @@ const Live = () => {
 
         />
         <DriftFieldWrapper>
-          {/* <DriftFieldWithWebSocket /> */}
-          <DriftFieldWithJson currentTime={currentTime} />
+          <DriftFieldWithWebSocket />
+	  {/*<DriftFieldWithJson currentTime={currentTime} />*/}
         </DriftFieldWrapper>
       </MainContainer>
     </LivePageWrapper>

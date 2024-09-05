@@ -41,6 +41,8 @@ export const DriftFieldWithJson: FC<IFootballFieldWithJson> = ({ currentTime }) 
     (jsonData: FromMlWebsocketData[]) => {
       if (!jsonData.length) return [];
 
+      let t = (currentTime % jsonData.length);
+      console.log({t: t});
       const secondObj = jsonData.find((item) => item.secNumberFromStart === secNumberFromStart);
       if (!secondObj) return [];
 
@@ -48,19 +50,27 @@ export const DriftFieldWithJson: FC<IFootballFieldWithJson> = ({ currentTime }) 
     },
     [currentTime, secNumberFromStart],
   );
+
   useEffect(() => {
     let animationFrameId: number;
     let startTime: number | null = null;
 
     function getData() {
-      const framesAtCurrentTime = getFramesAtCurrentTime(parsedCoordinates);
 
       function animate(timestamp: number) {
+
         if (!startTime) {
           startTime = timestamp;
         }
 
         const elapsedTime = timestamp - startTime;
+
+        let t1 = (elapsedTime % parsedCoordinates.length * 1000);
+
+        console.log(t1);
+
+        const framesAtCurrentTime = getFramesAtCurrentTime(t1);
+
         const currentFrame = Math.floor((elapsedTime / 1000) * 29);
 
         if (currentFrame < framesAtCurrentTime.length) {
@@ -80,7 +90,7 @@ export const DriftFieldWithJson: FC<IFootballFieldWithJson> = ({ currentTime }) 
     getData();
 
     return () => cancelAnimationFrame(animationFrameId);
-  }, [currentTime]);
+  }, [currentTime, parsedCoordinates,]);
 
   return <DriftFieldSchema cars={cars} />;
 };
