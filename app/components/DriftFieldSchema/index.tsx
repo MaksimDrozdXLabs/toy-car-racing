@@ -7,6 +7,7 @@ import React, {
 import BackgroundImage from '@/app/components/BackgroundImage';
 import { Entity } from '@/app/models/FieldCoords/types';
 import { getFieldDimensions } from '@/app/shared/handlers/getFieldDimensions';
+import { COLORS } from '@/app/shared/theme/colors';
 
 import { CarDot, DriftFieldWrapper } from './style';
 
@@ -41,10 +42,10 @@ export const DriftFieldSchema: FC<DriftFieldSchemaProps> = ({
       {cars.map((car, index) => (
         <CarDot
           key={index}
-          x={car.x * (currentWidth / defaultWidth)}
-          y={car.y * (height / defaultHeight)}
-          color={car.color}
-          border={car.border}
+          x={car.x * currentWidth}
+          y={car.y * height}
+          color={COLORS.mintGreen}
+          border={COLORS.freshGreen}
         />
       ))}
     </DriftFieldWrapper>

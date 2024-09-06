@@ -41,8 +41,8 @@ export const DriftFieldWithJson: FC<IFootballFieldWithJson> = ({ currentTime }) 
     (jsonData: FromMlWebsocketData[]) => {
       if (!jsonData.length) return [];
 
-      let t = (currentTime % jsonData.length);
-      console.log({t: t});
+      const t = (currentTime % jsonData.length);
+      console.log({ t });
       const secondObj = jsonData.find((item) => item.secNumberFromStart === secNumberFromStart);
       if (!secondObj) return [];
 
@@ -56,16 +56,14 @@ export const DriftFieldWithJson: FC<IFootballFieldWithJson> = ({ currentTime }) 
     let startTime: number | null = null;
 
     function getData() {
-
       function animate(timestamp: number) {
-
         if (!startTime) {
           startTime = timestamp;
         }
 
         const elapsedTime = timestamp - startTime;
 
-        let t1 = (elapsedTime % parsedCoordinates.length * 1000);
+        const t1 = (elapsedTime % parsedCoordinates.length * 1000);
 
         console.log(t1);
 
@@ -90,7 +88,7 @@ export const DriftFieldWithJson: FC<IFootballFieldWithJson> = ({ currentTime }) 
     getData();
 
     return () => cancelAnimationFrame(animationFrameId);
-  }, [currentTime, parsedCoordinates,]);
+  }, [currentTime, parsedCoordinates]);
 
   return <DriftFieldSchema cars={cars} />;
 };

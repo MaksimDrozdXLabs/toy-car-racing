@@ -1,23 +1,22 @@
 import { Box } from '@mui/material';
 import styled from 'styled-components';
 
-export const VideoWrapper = styled(Box)<{ $isVideoLoading: boolean }>`
-    display: ${({ $isVideoLoading }) => ($isVideoLoading ? 'none' : 'block')};
+export const VideoWrapper = styled(Box)`
     width: 100%;
     border-radius: 12px;
-    flex: 1 1 auto;
 
     & .video-js, video {
         border-radius: 12px;
     }
 
     .stream-root {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
     }
+
     .stream-img {
-      // height: 80vh;
-      width: 100%;
+        width: 100%;
+        height: 100%;
     }
 `;
