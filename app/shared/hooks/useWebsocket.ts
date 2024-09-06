@@ -23,6 +23,12 @@ const useWebsocket = (url: string, onMessage: MessageHandler) => {
       setIsConnected(true);
     };
 
+    socket.onmessage = (e: any) => {
+      const data = JSON.parse(e.data);
+      // console.log();
+      onMessage(data);
+    };
+
     socket.onclose = () => {
       setIsConnected(false);
       console.log('WebSocket disconnected');

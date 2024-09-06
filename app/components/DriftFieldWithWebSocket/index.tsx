@@ -9,8 +9,12 @@ import useWebsocket from '@/app/shared/hooks/useWebsocket';
 export const DriftFieldWithWebSocket: FC = () => {
   const [cars, setCars] = useState<Entity[]>([]);
 
-  const handleUpdateFieldCoordinates = useCallback((updatedCars: Entity[]) => {
-    setCars(updatedCars);
+  const handleUpdateFieldCoordinates = useCallback((data: any) => {
+    const updatedCars: Entity[] = data?.boxes || [];
+
+    // setCars(updatedCars);
+
+    // data.sendMessage('');
   }, []);
 
   const data = useWebsocket(
@@ -18,6 +22,10 @@ export const DriftFieldWithWebSocket: FC = () => {
     'ws://127.0.0.1:8081/drift/ws',
     handleUpdateFieldCoordinates,
   );
+
   console.log('isConnected', data.isConnected);
+
+  // data.sendMessage('');
+
   return <DriftFieldSchema cars={cars} />;
 };
