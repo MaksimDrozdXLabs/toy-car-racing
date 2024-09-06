@@ -12,7 +12,6 @@ export const DriftFieldWithWebSocket: FC = () => {
   const handleUpdateFieldCoordinates = useCallback((data: any) => {
     const updatedCars: Entity[] = data?.boxes[0] || [];
     setCars(updatedCars);
-    debugger;
   }, []);
 
   const data = useWebsocket(

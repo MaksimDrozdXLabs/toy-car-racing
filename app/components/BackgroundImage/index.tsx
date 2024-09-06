@@ -8,6 +8,9 @@ const BackgroundImage = () => (
     <Image
       src="/map.png"
       alt="Toy Car Field"
+      style={{
+        transform: "rotate(-12.5deg) translateX(-25px) translateY(-25px)"
+      }}
       fill
       priority
     />
